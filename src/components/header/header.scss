@@ -1,0 +1,40 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+
+    &__logo{
+        max-width: 130px;
+    }
+
+    &__button{
+        padding: 0.5rem;
+        background: hsl(243, 27%, 20%);
+        border: none;
+        color: white;
+        display: flex;
+        gap: 0.2rem;
+        align-items: center;
+        border-radius: 0.3rem;
+
+        & i{
+            font-size: 0.7rem;
+        }
+    }
+}
+
+.menu{
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    background: hsl(243, 27%, 20%);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+
+    &__label{
+        display: flex;
+        justify-content: space-between;
+    }
+}
