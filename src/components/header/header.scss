@@ -30,11 +30,41 @@
     top: 4rem;
     right: 1rem;
     background: hsl(243, 27%, 20%);
-    padding: 0.5rem;
     border-radius: 0.3rem;
+    font-size: 0.9rem;
+    width: 180px;
 
-    &__label{
+    &__button{
+        background: transparent;
+        border: none;
+        color: white;
+        padding: 1rem;
+    }
+
+    &__content{
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+
+        &-title{
+            font-size: 0.8rem;
+            color: hsl(240, 6%, 70%);
+            padding: 0 0.5rem;
+        }
+
+        &-item{
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+
+            &--active{
+                background: hsl(243, 23%, 30%);
+                display: flex;
+                justify-content: space-between;
+                padding: 0.5rem;
+                border-radius: 0.3rem;
+            }
+        }
     }
 }

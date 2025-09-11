@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './header.scss';
 
-export default function Header({changeTemperature, changeWind, changePrecipitation}) {
+export default function Header({changeUnit, imperialUnit}) {
     const [showMenu, setShowMenu] = useState(false);
 
     return(
@@ -10,40 +10,22 @@ export default function Header({changeTemperature, changeWind, changePrecipitati
             <button className='header__button' type='button' onClick={() => setShowMenu(prev => !prev)}><i className="fa-solid fa-gear"></i>Units<i className="fa-solid fa-angle-down"></i></button>
             {showMenu && 
                 <div className='menu'>
-                    <button type='button'>Switch to UNITS</button>
-                    <fieldset className='menu__fieldset'>
-                        <legend>Temperature</legend>    
-                        <label className='menu__label'>
-                            <p>celsius (°C)</p>
-                            <input type="radio" name='temperature' value="celsius" onChange={(e) => changeTemperature(e.target.value)}/>
-                        </label>
-                        <label className='menu__label'>
-                            <p>Fahrenheit (°F)</p>
-                            <input type="radio" name='temperature' value="fahrenheit" onChange={(e) => changeTemperature(e.target.value)}/>                            
-                        </label>
-                    </fieldset> 
-                    <fieldset className='menu__fieldset'>
-                        <legend>Wind Speed</legend>    
-                        <label className='menu__label'>
-                            <p>km/h</p>
-                            <input type="radio" name='wind' value="meter" onChange={(e) => changeWind(e.target.value)}/>                            
-                        </label>
-                        <label className='menu__label'>
-                            <p>mph</p>
-                            <input type="radio" name='wind' value="miles" onChange={(e) => changeWind(e.target.value)}/>                            
-                        </label>
-                    </fieldset>   
-                    <fieldset className='menu__fieldset'>
-                        <legend>Precipitation</legend>    
-                        <label className='menu__label'>
-                            <p>Millimeters (mm)</p>
-                            <input type="radio" name='precipitation' value="millimeter" onChange={(e) => changePrecipitation(e.target.value)}/>                            
-                        </label>
-                        <label className='menu__label'>
-                            <p>Inches (in)</p>
-                            <input type="radio" name='precipitation' value="inche" onChange={(e) => changePrecipitation(e.target.value)}/>                      
-                        </label>
-                    </fieldset> 
+                    <button type='button' className='menu__button' onClick={changeUnit}>Switch to {imperialUnit ? "Metric" : "Imperial"}</button>
+                    <div className='menu__content'>
+                        <span className='menu__content-title'>Temperature</span>
+                        <p className={imperialUnit ? 'menu__content-item' : 'menu__content-item--active'}>Celsius (°C){!imperialUnit && <i className="fa-solid fa-check"></i>}</p>
+                        <p className={imperialUnit ? 'menu__content-item--active' : 'menu__content-item'}>Fahrenheit (°F){imperialUnit && <i className="fa-solid fa-check"></i>}</p>
+                    </div>
+                    <div className='menu__content'>
+                        <span className='menu__content-title'>Wind Speed</span>
+                        <p className={imperialUnit ? 'menu__content-item' : 'menu__content-item--active'}>km/h{!imperialUnit && <i className="fa-solid fa-check"></i>}</p>
+                        <p className={imperialUnit ? 'menu__content-item--active' : 'menu__content-item'}>mph{imperialUnit && <i className="fa-solid fa-check"></i>}</p>
+                    </div>
+                    <div className='menu__content'>
+                        <span className='menu__content-title'>Precipitation</span>
+                        <p className={imperialUnit ? 'menu__content-item' : 'menu__content-item--active'}>Millimeters (mm){!imperialUnit && <i className="fa-solid fa-check"></i>}</p>
+                        <p className={imperialUnit ? 'menu__content-item--active' : 'menu__content-item'}>Inches (in){imperialUnit && <i className="fa-solid fa-check"></i>}</p>
+                    </div>
                 </div>
             }
         </header>
