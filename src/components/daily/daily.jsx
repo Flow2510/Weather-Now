@@ -6,15 +6,21 @@ export default function Daily({week, tempMax, tempMin, weatherCodes,getWeatherIc
         <section className='daily'>
             <h3>Daily forecast</h3>
             <div className='daily__gallery'>
-                {week.time?.map((day, index) => (
-                <DailyCard
+                {week.time?.map((day, index) => {
+                const dayName = new Date(day).toLocaleDateString("en-US", {
+                    weekday: "short",
+                });
+
+                return (
+                    <DailyCard
                     key={day}
                     imageCard={getWeatherIcon(weatherCodes[index])}
-                    tempMax={tempMax[index]}
-                    tempMin={tempMin[index]}
-                    date={day}
-                />
-                ))}
+                    tempMax={Math.floor(tempMax[index])}
+                    tempMin={Math.floor(tempMin[index])}
+                    date={dayName}
+                    />
+                );
+                })}
             </div>
         </section>
     )

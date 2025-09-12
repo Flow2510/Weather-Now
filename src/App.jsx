@@ -13,6 +13,7 @@ import rain from "../public/images/icon-rain.webp";
 import snow from "../public/images/icon-snow.webp";
 import storm from "../public/images/icon-storm.webp";
 import Daily from './components/daily/daily';
+import Hourly from './components/hourly/hourly';
 
 function App() {
   const [weather, setWeather] = useState(null)
@@ -46,7 +47,7 @@ function App() {
             latitude,
             longitude,
             current_weather: "true",
-            hourly: "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m",
+            hourly: "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m,weathercode",
             timezone: "Europe/Paris",
             daily: "temperature_2m_max,temperature_2m_min,weathercode"
           });
@@ -95,6 +96,7 @@ useEffect(() => {
           weatherCodes={weather?.daily?.weathercode || []}
           getWeatherIcon={getWeatherIcon}
         />
+        <Hourly />
       </main>
     </>
   )
