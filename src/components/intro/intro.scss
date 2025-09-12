@@ -1,0 +1,55 @@
+.intro{
+    padding: 1rem 0;
+
+    &__title{
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 2.8rem;
+        font-family: "Bricolage Grotesque", sans-serif;
+    }
+
+    &__form{
+        width: 100%;
+
+        &-input-wrapper{
+            display: flex;
+            background: hsl(243, 27%, 20%);
+            align-items: center;
+            padding: 0 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.7rem;
+
+            & i{
+                color: hsl(250, 6%, 84%);
+            }
+        }
+
+        &-input{
+            width: 100%;
+            border-radius: 0.5rem;
+            border: none;
+            background: transparent;
+            padding: 0.8rem;
+            font-size: 1.1rem;
+            outline: none;
+            color: hsl(250, 6%, 84%);
+
+            &::placeholder{
+                color: hsl(250, 6%, 84%);
+            }
+        }
+
+        &-button{
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            border-radius: 0.5rem;
+            border: none;
+            background: hsl(233, 67%, 56%);
+            color: white;
+            font-weight: 400;
+            font-family: "DM sans";
+        }
+    }
+}
