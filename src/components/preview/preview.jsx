@@ -13,9 +13,11 @@ export default function Preview({town, country, meteoImage, meteoAlt, temperatur
 
     return(
         <section className='preview'>
-            <img className='preview__background' src="/public/images/bg-today-small.svg" alt="" />
-            <h2 className='preview__title'>{town}, {country}</h2>
-            <span className='preview__subtitle'>{currentDate}</span>
+            <div className='preview__background'></div>
+            <div>
+                <h2 className='preview__title'>{town}, {country}</h2>
+                <span className='preview__subtitle'>{currentDate}</span>
+            </div>
             <div className='preview__content'>
                 <img className='preview__content-image' src={meteoImage} alt={meteoAlt} />
                 <span className='preview__content-result'>{temperature}°</span>

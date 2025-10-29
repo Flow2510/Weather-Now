@@ -82,7 +82,7 @@ function App() {
           setSearch={setSearch}
         />
         {!unknown && 
-          <>
+          <div className='main__wrapper'>
             <Preview 
               town={location?.city || ""}
               country={location?.country || ""}
@@ -111,7 +111,7 @@ function App() {
               hourlyTemp={weather?.hourly?.temperature_2m || []}
               hourlyTime={weather?.hourly?.time || []}
             />
-          </>
+          </div>
         }
         {unknown &&
           <h3 className='unknown__title'>No search result found!</h3>

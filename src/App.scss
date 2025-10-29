@@ -19,3 +19,22 @@ main{
 .unknown__title{
     text-align: center;
 }
+
+.main__wrapper{
+
+    @media screen and (min-width:768px) {
+        max-width: 600px;
+        margin: 0 auto 5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    @media screen and (min-width:900px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 2rem;
+    }
+}

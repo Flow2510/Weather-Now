@@ -1,7 +1,12 @@
 .preview-gallery{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 1.5rem;
+
+    @media screen and (min-width:768px) {
+        grid-column: 1 /span 2;
+        grid-template-columns: repeat(4, 1fr);
+    }
 
     &__card{
         padding: 1rem;

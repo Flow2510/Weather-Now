@@ -4,6 +4,11 @@
     background-color: hsl(243, 27%, 20%);
     border-radius: 1rem;
 
+    @media screen and (min-width:768px) {
+        grid-column: 3;
+        grid-row: 1 / span 3;
+    }
+
     &__header{
         display: flex;
         justify-content: space-between;
@@ -32,7 +37,7 @@
         background: hsl(243, 23%, 24%);
         display: flex;
         align-items: center;
-        padding: 0.5rem;
+        padding: 0.25rem;
         border-radius: 0.4rem;
         border: 1px solid hsl(243, 23%, 30%);
 
