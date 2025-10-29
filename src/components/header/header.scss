@@ -25,10 +25,19 @@
     }
 }
 
+.menu__wrapper{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .menu{
     position: absolute;
-    top: 4rem;
     right: 1rem;
+    top: 3.5rem;
     background: hsl(243, 27%, 20%);
     border-radius: 0.3rem;
     font-size: 0.9rem;
