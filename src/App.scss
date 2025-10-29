@@ -20,6 +20,10 @@ main{
     text-align: center;
 }
 
+button, select{
+    cursor: pointer;
+}
+
 .main__wrapper{
 
     @media screen and (min-width:768px) {
