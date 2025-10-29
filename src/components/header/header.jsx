@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import logo from '../../assets/images/logo.svg'
 import './header.scss';
 
 export default function Header({changeUnit, imperialUnit}) {
@@ -6,7 +7,7 @@ export default function Header({changeUnit, imperialUnit}) {
 
     return(
         <header className='header'>
-            <img className='header__logo' src="/images/logo.svg" alt="Weather now Logo" />
+            <img className='header__logo' src={logo} alt="Weather now Logo" />
             <button className='header__button' type='button' onClick={() => setShowMenu(prev => !prev)}><i className="fa-solid fa-gear"></i>Units<i className="fa-solid fa-angle-down"></i></button>
             {showMenu && 
                 <div className='menu__wrapper' onClick={() => setShowMenu(prev => !prev)}>

@@ -4,28 +4,18 @@ import Header from './components/header/header';
 import Intro from './components/intro/intro';
 import Preview from './components/preview/preview';
 import PreviewGallery from './components/previewgallery/previewgallery';
-import sunny from "../public/images/icon-sunny.webp";
-import cloudly from "../public/images/icon-partly-cloudy.webp";
-import overcast from "../public/images/icon-overcast.webp";
-import fog from "../public/images/icon-fog.webp";
-import drizzle from "../public/images/icon-drizzle.webp";
-import rain from "../public/images/icon-rain.webp";
-import snow from "../public/images/icon-snow.webp";
-import storm from "../public/images/icon-storm.webp";
+import sunny from "./assets/images/icon-sunny.webp";
+import cloudly from "./assets/images/icon-partly-cloudy.webp";
+import overcast from "./assets/images/icon-overcast.webp";
+import fog from "./assets/images/icon-fog.webp";
+import drizzle from "./assets/images/icon-drizzle.webp";
+import rain from "./assets/images/icon-rain.webp";
+import snow from "./assets/images/icon-snow.webp";
+import storm from "./assets/images/icon-storm.webp";
 import Daily from './components/daily/daily';
 import Hourly from './components/hourly/hourly';
 
-function App() {
-  const [weather, setWeather] = useState(null)
-  const [imperialUnit, setImperialUnit] = useState(false);
-  const [search, setSearch] = useState("Perpignan");
-  const [location, setLocation] = useState(null)
-  const [unknown, setUnknown] = useState(false)
-
-  const changeUnit = () => setImperialUnit(prev => !prev);
-  const city = search;
-
-  function getWeatherIcon(weathercode) {
+function getWeatherIcon(weathercode) {
     if (weathercode === 0) return sunny;
     if ([1, 2].includes(weathercode)) return cloudly;
     if (weathercode === 3) return overcast;
@@ -36,6 +26,16 @@ function App() {
     if ([95, 96, 99].includes(weathercode)) return storm;
     return cloudly; // fallback
   }
+
+function App() {
+  const [weather, setWeather] = useState(null)
+  const [imperialUnit, setImperialUnit] = useState(false);
+  const [search, setSearch] = useState("Perpignan");
+  const [location, setLocation] = useState(null)
+  const [unknown, setUnknown] = useState(false)
+
+  const changeUnit = () => setImperialUnit(prev => !prev);
+  const city = search;
 
   useEffect(() => {
     if (!search) return; 

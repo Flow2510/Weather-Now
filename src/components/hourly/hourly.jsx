@@ -54,12 +54,12 @@ export default function Hourly({weatherCode, getWeatherIcon, hourlyTemp, hourlyT
                 </select>
             </div>
             <div className='hourly__list'>
-                {hourlyTime.slice(day, day + 8).map((__, index) => {
+                {hourlyTime.slice(day, day + 8).map((id, index) => {
                     const code = weatherCode?.[index + day] || 0;
                     const hourlyImage = getWeatherIcon(code);
 
                     return (
-                        <article key={index} className='hourly__article'>
+                        <article key={id} className='hourly__article'>
                             <img className='hourly__article-image' src={hourlyImage} alt="" />
                             <div className='hourly__article-content'>
                                 <p className='hourly__article-time'>

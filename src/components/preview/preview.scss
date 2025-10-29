@@ -27,11 +27,11 @@
         object-fit: cover;
         object-position: top;
         z-index: -1;
-        background: url(/public//images/bg-today-small.svg) no-repeat;
+        background: url(../../assets/images/bg-today-small.svg) no-repeat;
         background-size: cover;
 
         @media screen and (min-width:768px) {
-            background: url(/public//images/bg-today-large.svg) no-repeat;
+            background: url(../../assets/images/bg-today-large.svg) no-repeat;
             background-size: cover;
         }
     }
